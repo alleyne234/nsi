@@ -5,10 +5,6 @@ from random import randint
 
 ### CODE ###
 
-def main():
-    print("Ce fichier est top secret! Personne ne doit connaître ma moyenne")
-    print(moyenne([5,8,9,10,14]))
-
 def moyenne(tableau):
     '''Renvoie la moyenne des valeurs du tableau.
     :tableau : (list)
@@ -64,6 +60,10 @@ def insere_element(tab, position, element):
     for i in range(position, len(tab)):
         new_tab.append(tab[i])
     return new_tab
+
+def main():
+    print("Ce fichier est top secret! Personne ne doit connaître ma moyenne")
+    print(moyenne([5,8,9,10,14]))
 
 if __name__ == "__main__":
     main()
