@@ -40,5 +40,31 @@ def ajoute(abr, x):
     else:
         return Noeud(abr.gauche, abr.valeur, ajoute(abr.droite, x))
     
+def compte(x, a):
+    """Renvoie le nombre d'occurences de x dans un arbre."""
+    if a is None:
+        return 0
+    elif x == a.valeur:
+        return 1 + compte(x, a.gauche) + compte(x, a.droite)
+    elif x < a.valeur:
+        return compte(x, a.gauche)
+    else:
+        return compte(x, a.droite)
+    
 temp = ajoute(ABR, 10)
 temp = ajoute(temp, 0)
+
+print(compte(3, ABR))
+
+
+
+t = []
+
+def remplir(a, t):
+    """Renvoie tois les éléments de l'abre dans un tableau dans l'ordre infixe."""
+    if a is None:
+        return
+    remplir(a.gauche, t)
+    t.append(a.valeur)
+    remplir(a.droite, t)
+    
