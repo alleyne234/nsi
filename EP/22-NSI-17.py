@@ -33,7 +33,7 @@ class ABR:
         else:
             self.racine.gauche.parcours(tab)
             tab.append(self.racine.valeur)
-            self.racine.droite.append
+            self.racine.droite.parcours(tab)
             return tab
         
     def insere(self, element):
@@ -54,9 +54,9 @@ class ABR:
             return False
         else:
             if element < self.racine.valeur:
-                return self.racine.gauche.recher()
+                return self.racine.gauche.recherche(element)
             elif element > self.racine.valeur:
-                return ...
+                return self.racine.droite.recherche(element)
             else:
                 return True
 
@@ -66,5 +66,8 @@ a.insere(3)
 a.insere(9)
 a.insere(1)
 a.insere(9)
-a.parcours()
+print(a.parcours()) # Affiche [1, 3, 7, 9, 9]
 
+print(a.recherche(4)) # Affiche False
+
+print(a.recherche(3)) # Affiche True
