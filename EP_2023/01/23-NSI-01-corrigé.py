@@ -4,15 +4,17 @@ def verifie(tab):
     """Prend en paramètre un tableau de valeurs numériques non vide et
     renvoie True si ce tableau est trié dans l'ordre croissant, False sinon.
 
-    :param list tab: Liste de nombres numériques non vide.
-    :return bool: Renvoie True ou False
+    :param list tab: liste de nombres numériques non vide
+    :return bool: renvoie True ou False
     """
     valeur_max = tab[0]
+    
     for nombre in tab:
         if valeur_max <= nombre:
             valeur_max = nombre
         else:
             return False
+        
     return True
 
 assert verifie([0, 5, 8, 8, 9]) == True, "Erreur exercice 1"
